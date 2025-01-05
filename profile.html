@@ -1,124 +1,177 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil - PMB</title>
-    <link rel="stylesheet" href="/assets/profile.css">
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil - Paguyuban Barudak Komputer</title>
+    <link rel="stylesheet" href="./assets/profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
     <header class="header">
-        <div class="logo-pbk">
-            <img src="assets/logo-pbk.png" alt="">
-            <h3>Paguyuban <br>Barudak Komputer</h3>
+      <div class="logo-pbk">
+        <img src="assets/logo-pbk.png" alt="" />
+        <h3>Paguyuban <br />Barudak Komputer</h3>
+      </div>
+      <nav class="navbar">
+        <a href="home.html">Beranda</a>
+        <a href="informasi.html">Informasi</a>
+        <a href="#" class="active">Profil</a>
+
+        <div class="dropdown">
+          <a href="#" class="dropbtn">Pengurus</a>
+          <div class="dropdown-content">
+            <a href="#">PBH</a>
+            <a href="#">Eksternal</a>
+            <a href="#">Internal</a>
+            <a href="#">Medinfo</a>
+          </div>
         </div>
-        <nav class="navbar">
-            <a href="#">Beranda</a>
-            <a href="informasi.html">Informasi</a>
-            <a href="#" class="active">Profil</a>
-        
-            <!-- Dropdown Pengurus -->
-            <div class="dropdown">
-                <a href="#" class="dropbtn">Pengurus</a>
-                <div class="dropdown-content">
-                    <a href="#">PBH</a>
-                    <a href="#">Eksternal</a>
-                    <a href="#">Internal</a>
-                    <a href="#">Medinfo</a>
-                </div>
-            </div>
-        
-            <!-- Dropdown Demis -->
-            <div class="dropdown">
-                <a href="#" class="dropbtn">Demis</a>
-                <div class="dropdown-content">
-                    <a href="#">2021</a>
-                    <a href="#">2022</a>
-                    <a href="#">2023</a>
-                </div>
-            </div>
-        </nav>
-        
+
+        <div class="dropdown">
+          <a href="#" class="dropbtn">Demis</a>
+          <div class="dropdown-content">
+            <a href="#">2021</a>
+            <a href="#">2022</a>
+            <a href="#">2023</a>
+          </div>
+        </div>
+      </nav>
     </header>
 
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Profil PBK</h1>
+        <p>Mengenal lebih dekat Paguyuban Barudak Komputer</p>
+      </div>
+    </section>
+
     <main class="main-content">
-        <section class="intro-section">
-            <div class="intro-content">
-                <h1>Apa Itu PBK?</h1>
-                <p>Didirikan pada tahun 2012 di lingkungan Fakultas Ilmu Komputer Universitas Indonesia (PBK). Program ini berhasil Komputer merupakan wadah bagi para mahasiswa untuk mengembangkan kemampuan mereka di bidang ilmu yang sama dalam dunia teknologi. Anggota mereka selalu aktif berkontribusi memberikan yang baik, namun sering bertindak ini menjadi salah satu bagian penting dalam organisasi yang ada.</p>
-            </div>
-            <img src="/assets/WhatsApp Image 2025-01-04 at 14.13.23_0912ac0d.jpg" alt="PBK Introduction" class="intro-image">
-        </section>
+      <!-- Vision Mission Section -->
+      <section class="vision-mission">
+        <div class="vision">
+          <i class="fas fa-eye"></i>
+          <h2>Visi</h2>
+          <p>
+            Menjadi organisasi mahasiswa yang unggul dalam pengembangan
+            teknologi informasi dan berkontribusi aktif dalam kemajuan dunia
+            teknologi di Indonesia.
+          </p>
+        </div>
+        <div class="mission">
+          <i class="fas fa-bullseye"></i>
+          <h2>Misi</h2>
+          <ul>
+            <li>
+              Mengembangkan potensi mahasiswa dalam bidang teknologi informasi
+            </li>
+            <li>Membangun kolaborasi antar mahasiswa dalam proyek teknologi</li>
+            <li>Memberikan kontribusi nyata dalam pengembangan teknologi</li>
+            <li>
+              Menyelenggarakan kegiatan pembelajaran dan pelatihan teknologi
+            </li>
+          </ul>
+        </div>
+      </section>
 
-        <nav class="section-nav">
-            <div class="nav-container">
-                <button class="nav-button">
-                    <span>Sejarah</span> 
-                    <img src="/images/plus-icon.svg" alt="Plus" class="nav-icon">
-                </button>
-                <button class="nav-button">
-                    <span>Visi & Misi PBK</span>
-                    <img src="/images/plus-icon.svg" alt="Plus" class="nav-icon">
-                </button>
+      <!-- History Section -->
+      <section class="history">
+        <div class="section-header">
+          <i class="fas fa-history"></i>
+          <h2>Sejarah PBK</h2>
+        </div>
+        <div class="history-content">
+          <p>
+            Paguyuban Barudak Komputer (PBK) didirikan pada tahun 2010 oleh
+            sekelompok mahasiswa Fakultas Komputer yang memiliki visi sama untuk
+            memajukan dunia teknologi informasi di lingkungan kampus. Berawal
+            dari diskusi-diskusi informal tentang perkembangan teknologi, PBK
+            tumbuh menjadi organisasi yang solid dengan berbagai program
+            unggulan.
+          </p>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="year">2010</div>
+              <div class="event">Pendirian PBK</div>
             </div>
-        </nav>
+            <div class="timeline-item">
+              <div class="year">2015</div>
+              <div class="event">Pengembangan Program Mentoring</div>
+            </div>
+            <div class="timeline-item">
+              <div class="year">2020</div>
+              <div class="event">Peluncuran Program Inovasi Digital</div>
+            </div>
+            <div class="timeline-item">
+              <div class="year">2025</div>
+              <div class="event">Ekspansi Program Kolaborasi Nasional</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section class="history-section">
-            <h2 style="text-align: center;">Sejarah</h2>
-            <div class="history-grid">
-                <div class="history-item">
-                    <img src="/images/icon-mail.svg" alt="Mail Icon">
-                    <p>Egestas est dui scelerisque et eu porta aliquam nunc habitasse.</p>
-                </div>
-                <div class="history-item">
-                    <img src="/images/icon-chart.svg" alt="Chart Icon">
-                    <p>In nunc pellentesque facilisi id mattis faucibus commodo enim.</p>
-                </div>
-                <div class="history-item">
-                    <img src="/images/icon-text.svg" alt="Text Icon">
-                    <p>Tristique elementum ac maecenas justo feugiat euismod scelerisque sem.</p>
-                </div>
-                <div class="history-item">
-                    <img src="/images/icon-print.svg" alt="Print Icon">
-                    <p>Curabitur magna eros accumsan pharetra, nunc condimentum sit enim elementum.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="vision-mission-section">
-            <h2 style="text-align: center;">Visi & Misi</h2>
-            <div class="vision-box">
-                <div class="vision-content">
-                    <h3>CAPTION</h3>
-                    <h4>Visi</h4>
-                    <p>Rhoncus nunc id sagittis nec in id ullamcorper et id. Condimentum sit nunc in nunc id sagittis nec. Elementum in nunc nec. Elementum in nunc nec sagittis nec pharetra.</p>
-                </div>
-            </div>
-            <div class="mission-grid">
-                <div class="mission-item">Egestas est dui scelerisque et eu porta aliquam nunc habitasse.</div>
-                <div class="mission-item">Tristique elementum ac maecenas justo feugiat euismod scelerisque sem.</div>
-                <div class="mission-item">Curabitur magna eros accumsan pharetra, nunc condimentum sit enim elementum.</div>
-                <div class="mission-item">In nunc pellentesque facilisi id mattis faucibus commodo enim.</div>
-            </div>
-        </section>
+      <!-- Values Section -->
+      <section class="values">
+        <div class="section-header">
+          <i class="fas fa-star"></i>
+          <h2>Nilai-Nilai Kami</h2>
+        </div>
+        <div class="values-grid">
+          <div class="value-item">
+            <i class="fas fa-handshake"></i>
+            <h3>Kolaborasi</h3>
+            <p>Bekerja sama untuk mencapai tujuan bersama</p>
+          </div>
+          <div class="value-item">
+            <i class="fas fa-lightbulb"></i>
+            <h3>Inovasi</h3>
+            <p>Selalu mencari cara baru dalam pengembangan teknologi</p>
+          </div>
+          <div class="value-item">
+            <i class="fas fa-users"></i>
+            <h3>Inklusif</h3>
+            <p>Terbuka untuk semua yang ingin berkembang</p>
+          </div>
+          <div class="value-item">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>Pembelajaran</h3>
+            <p>Komitmen untuk terus belajar dan berkembang</p>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer class="footer">
-        <nav class="footer-nav">
-            <a href="/demo">Demo</a>
-            <a href="/tools">Tools</a>
-            <a href="/program">Program</a>
-            <a href="/panduan">Panduan</a>
-            <a href="/about">About</a>
-            <a href="/bantuan">Bantuan</a>
-        </nav>
-        <div class="social-links">
-            <a href="#" class="social-link">FB</a>
-            <a href="#" class="social-link">TW</a>
-            <a href="#" class="social-link">IG</a>
-            <a href="#" class="social-link">IN</a>
-        </div>
-        <p class="copyright">Copyright © 2024. All rights reserved.</p>
+    <footer>
+      <div class="footer-links">
+        <a href="#">Beranda</a>
+        <a href="#">Informasi</a>
+        <a href="#">Profil</a>
+        <a href="#">Pengurus</a>
+        <a href="#">Demis</a>
+      </div>
+      <div class="social-media">
+        <a href="https://www.facebook.com/pbk.fkom.uniku/" target="_blank"
+          ><i class="fab fa-facebook"></i
+        ></a>
+        <a href="https://x.com/HariInaka8" target="_blank"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a href="https://www.instagram.com/pbkfkom_official/" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://www.youtube.com/@pbkfkomuniku" target="_blank"
+          ><i class="fab fa-youtube"></i
+        ></a>
+        <a
+          href="https://id.linkedin.com/in/pbk-fkom-uniku-219b5b245"
+          target="_blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+      </div>
+      <p>Paguyuban Barudak Komputer &copy; 2025. All rights reserved.</p>
     </footer>
-</body>
+  </body>
 </html>
