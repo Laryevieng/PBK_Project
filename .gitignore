@@ -1,0 +1,23 @@
+# Ignore all .log files
+*.log
+
+# Ignore all .DS_Store files (macOS system files)
+.DS_Store
+
+# Ignore node_modules directory (for Node.js projects)
+node_modules/
+
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+
+# Ignore build artifacts
+dist/
+build/
+
+# Ignore environment files
+.env
+
+# Ignore temporary files
+*.tmp
+*.swp
