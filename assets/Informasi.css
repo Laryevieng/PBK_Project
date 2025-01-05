@@ -1,0 +1,227 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+  /* Header styles */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 13%;
+    width: 100%;
+    padding: 20px 10%;
+    background: blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo-pbk{
+    display: flex;
+}
+.logo-pbk img {
+    display: flex;
+    width: 50px;  
+    height: auto; 
+}
+
+.logo-pbk h3{
+    color: white;
+    margin-left: 25px;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    font-weight:bolder;
+    color: peru;
+    text-decoration:underline;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    font-size: 18px;
+    color: blue;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:blue;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 101;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: peru;
+}
+
+/* Tampilkan Dropdown saat Hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Aktifkan efek hover pada dropdown */
+.dropdown:hover .dropbtn {
+    font-weight: bold;
+    color: peru;
+}
+  
+  /* Main content styles */
+  .main-content {
+    max-width: 100vh;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .page-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--text-gray);
+  }
+  
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .info-card {
+    border: 2px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+  
+  .info-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .info-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .info-content {
+    padding: 1rem;
+  }
+  
+  .info-content h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-gray);
+  }
+  
+  .info-content p {
+    margin: 0 0 1rem 0;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .more-info {
+    color: var(--primary-blue);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+  }
+
+  .more-info:hover{
+    font-size: bold;
+    color: blue;
+  }
+
+  /* Main content styles */
+.main-content {
+    flex: 1; /* Mengisi ruang kosong di antara header dan footer */
+    max-width: 1200px;
+    margin: 13% auto 0 auto; /* Menambahkan margin atas sesuai tinggi header */
+    padding: 2rem;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 6rem;
+    font-size: 3.5rem;
+    letter-spacing: 10px;
+    color: var(--text-gray);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+  
+  /* Footer */
+  footer {
+    background-color: #4e4e4e;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Memastikan footer tetap di bagian bawah */
+}
+
+.footer-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-media a {
+    color: #fff;
+    margin: 0 5px;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+footer p {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}

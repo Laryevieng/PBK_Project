@@ -1,0 +1,278 @@
+:root {
+    --primary-blue: #0066ff;
+    --text-gray: #333;
+    --bg-gray: #f5f5f5;
+    --footer-bg: #4a4a4a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text-gray);
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 13%;
+    width: 100%;
+    padding: 20px 10%;
+    background: blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo-pbk{
+    display: flex;
+}
+.logo-pbk img {
+    display: flex;
+    width: 50px;  
+    height: auto; 
+}
+
+.logo-pbk h3{
+    color: white;
+    margin-left: 25px;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    font-weight:bolder;
+    color: peru;
+    text-decoration:underline;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    font-size: 18px;
+    color: blue;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:blue;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 101;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: peru;
+}
+
+/* Tampilkan Dropdown saat Hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Aktifkan efek hover pada dropdown */
+.dropdown:hover .dropbtn {
+    font-weight: bold;
+    color: peru;
+}
+
+.intro-section {
+    display: flex;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    margin-top: 10rem;
+    align-items: center;
+}
+
+.intro-content {
+    flex: 1;
+}
+
+.intro-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.intro-image {
+    flex: 1;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.section-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.nav-container {
+    display: flex;
+    gap: 1rem;
+    background: #0066ff;
+    border: 1px solid #0066ff;
+    border-radius: 50px;
+    padding: 0.5rem;
+}
+.nav-button span {
+    color: white;
+}
+
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.2s;
+}
+
+.nav-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.history-section,
+.vision-mission-section,
+.program-section {
+    margin-bottom: 4rem;
+}
+
+.history-section h2,
+.vision-mission-section h2,
+.program-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.history-item img {
+    width: 48px;
+    height: 48px;
+}
+
+.vision-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.vision-content h3 {
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.mission-item {
+    padding: 1rem;
+    background-color: var(--bg-gray);
+    border-radius: 8px;
+}
+
+.section-bottom {
+    color: white;
+    text-align: center;
+    background-color: var(--primary-blue);
+    padding: 1rem;
+}
+
+.footer {
+    background-color: var(--footer-bg);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: #ccc;
+}
