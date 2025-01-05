@@ -219,29 +219,106 @@ footer {
     text-align: center;
     padding: 20px 0;
     margin-top: 50px;
-}
-
-.footer-links a {
+  }
+  
+  .footer-links a {
     color: #fff;
     margin: 0 10px;
     text-decoration: none;
     font-size: 14px;
-    margin-bottom: 8px;
-}
-
-.footer-links a:hover {
+  }
+  
+  .footer-links a:hover {
     text-decoration: underline;
-}
-
-.social-media a {
+  }
+  
+  .social-media {
+    margin: 20px 0;
+  }
+  
+  .social-media a {
     color: #fff;
-    margin: 0 5px;
-    font-size: 18px;
-    margin-bottom: 8px;
-}
-
-footer p {
+    margin: 0 10px;
+    font-size: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-media a:hover {
+    color: #ddd;
+  }
+  
+  footer p {
     font-size: 12px;
     margin-top: 10px;
-    margin-bottom: 8px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .vision-mission {
+      grid-template-columns: 1fr;
+    }
+  
+    .values-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .timeline {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      padding: 20px 5%;
+    }
+  
+    .navbar a {
+      margin-left: 20px;
+      font-size: 16px;
+    }
+  
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  
+    .section-header h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo-pbk h3 {
+      font-size: 14px;
+    }
+  
+    .navbar a {
+      margin-left: 15px;
+      font-size: 14px;
+    }
+  
+    .hero {
+      padding-top: 100px;
+    }
+  
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .timeline {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Mengurangi jarak antar kolom di bagian struktural */
+.team-section .row {
+    --bs-gutter-x: -10rem; /* Mengurangi jarak horizontal antar kolom */
+    --bs-gutter-y: 1.5rem; /* Mengurangi jarak vertikal antar kolom */
+}
+
+.team-member {
+    margin: 0 auto; /* Memastikan konten tetap terpusat */
 }
