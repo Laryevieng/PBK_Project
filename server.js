@@ -6,7 +6,7 @@ const app = express();
 
 // Konfigurasi Express dan EJS
 app.set("view engine", "ejs");
-app.use(express.static("public")); // Untuk file statis (opsional)
+app.use(express.static("public")); // Untuk file statis
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Konfigurasi MySQL
@@ -30,14 +30,51 @@ db.connect((err) => {
 const upload = multer({ storage: multer.memoryStorage() });
 
 // Halaman utama (form upload dan daftar gambar)
+
 app.get("/", (req, res) => {
+  res.render("index", { title: "homepage" }); // Render the 'informasi.ejs' template
+});
+app.get("/informasi", (req, res) => {
+  res.render("informasi", { title: "Informasi" }); // Render the 'informasi.ejs' template
+});
+app.get("/profile", (req, res) => {
+  res.render("profile", { title: "profile" }); // Render the 'informasi.ejs' template
+});
+app.get("/bph", (req, res) => {
+  res.render("bph", { title: "bph" }); // Render the 'informasi.ejs' template
+});
+app.get("/internal", (req, res) => {
+  res.render("internal", { title: "internal" }); // Render the 'informasi.ejs' template
+});
+app.get("/akademis", (req, res) => {
+  res.render("akademis", { title: "akademis" }); // Render the 'informasi.ejs' template
+});
+app.get("/eksternal", (req, res) => {
+  res.render("eksternal", { title: "eksternal" }); // Render the 'informasi.ejs' template
+});
+app.get("/medinfo", (req, res) => {
+  res.render("medinfo", { title: "medinfo" }); // Render the 'informasi.ejs' template
+});
+
+app.get("/demis", (req, res) => {
   const sql = "SELECT id, nama FROM gambar";
   db.query(sql, (err, results) => {
     if (err) {
       console.error(err);
       return res.status(500).send("Gagal mengambil data gambar.");
     }
-    res.render("index", { gambar: results });
+    res.render("demis", { gambar: results });
+  });
+});
+
+app.get("/admin", (req, res) => {
+  const sql = "SELECT id, nama FROM gambar";
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send("Gagal mengambil data gambar.");
+    }
+    res.render("admin", { gambar: results });
   });
 });
 

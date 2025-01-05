@@ -315,10 +315,23 @@ footer {
 
   /* Mengurangi jarak antar kolom di bagian struktural */
 .team-section .row {
-    --bs-gutter-x: -10rem; /* Mengurangi jarak horizontal antar kolom */
-    --bs-gutter-y: 1.5rem; /* Mengurangi jarak vertikal antar kolom */
+  --bs-gutter-x: 1rem; /* Mengurangi jarak horizontal antar kolom */
+  --bs-gutter-y: 1.5rem; /* Mengurangi jarak vertikal antar kolom */
 }
 
 .team-member {
-    margin: 0 auto; /* Memastikan konten tetap terpusat */
+  margin: 0 auto; /* Memastikan konten tetap terpusat */
+}
+
+.team-section .row {
+    --bs-gutter-x: 1rem;
+    --bs-gutter-y: 1.5rem;
+}
+
+.team-member img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
 }
