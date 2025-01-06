@@ -144,6 +144,14 @@
   }
 }
 
+/*Rubah bagroun even mendatang*/
+.bg-purple {
+  background-color: #9333ea !important;
+}
+
+
+
+
 .hero {
   padding-top: 120px;
   background-color: #2563eb;
@@ -173,10 +181,18 @@
   padding: 40px 20px;
 }
 
+.achievements-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+}
+
+.resources-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+}
+
 .section-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
 }
 
 .section-header i {

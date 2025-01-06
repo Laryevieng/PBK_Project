@@ -15,7 +15,7 @@
   <body>
     <header class="header">
       <div class="logo-pbk">
-        <img src="assets/logo-pbk.png" alt="" />
+        <img src="/image/logo-pbk.png" alt="" />
         <h3>Paguyuban <br />Barudak Komputer</h3>
       </div>
       <nav class="navbar">
@@ -27,11 +27,11 @@
         <div class="dropdown">
           <a href="#" class="dropbtn">Pengurus</a>
           <div class="dropdown-content">
-            <a href="#">BPH</a>
-            <a href="#">Akademis</a>
-            <a href="#">Eksternal</a>
-            <a href="#">Internal</a>
-            <a href="#">Medinfo</a>
+            <a href="/bph">BPH</a>
+            <a href="/akademis">Akademis</a>
+            <a href="/eksternal">Eksternal</a>
+            <a href="/internal">Internal</a>
+            <a href="/medinfo">Medinfo</a>
           </div>
         </div>
 
@@ -46,45 +46,36 @@
         </div>
       </nav>
     </header>
-
-    <main class="demis-section">
-      <div class="intro">
-        <h2>Apa Itu Demis?</h2>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Demisioner PBK</h1>
         <p>
-          Demis merupakan istilah yang diberikan kepada seseorang anggota aktif
-          yang telah selesai masa jabatannya dalam suatu organisasi.
+          Demisioner Paguyuban Barudak Komputer adalah anggota yang telah menyelesaikan masa jabatannya namun tetap menjadi bagian integral dari organisasi. 
+          Meskipun secara administratif tidak lagi aktif, ikatan kekeluargaan dan kontribusi mereka tetap mengalir dalam semangat Paguyuban Barudak Komputer. 
+          Status demisioner bukan akhir dari keanggotaan, melainkan bentuk transformasi peran dalam keluarga besar Paguyuban Barudak Komputer.
         </p>
       </div>
-    </main>
+    </section>
 
     <div class="container my-5 item_01">
       <h1 class="text-center mb-4">
-        Anggota Periode <br />
-        2021 - 2022 <br />
-        Paguyuban Barudak Komputer
+          Periode 2021 - 2022 <br />
       </h1>
-
+    
       <% if (gambar.length > 0) { %>
-      <div class="row">
-        <% gambar.forEach(item => { %>
-        <div class="col-md-3 mb-4">
-          <div class="card">
-            <img
-              src="/gambar/<%= item.id %>"
-              class="card-img-top"
-              alt="Gambar <%= item.nama %>"
-            />
-            <div class="card-body">
-              <h5 class="card-title text-center"><%= item.nama %></h5>
+        <div class="grid-container">
+          <% gambar.forEach(item => { %>
+            <div class="profile-card">
+              <img src="/gambar/<%= item.id %>" alt="Gambar <%= item.nama %>" />
+              <p><%= item.nama %></p>
             </div>
-          </div>
+          <% }) %>
         </div>
-        <% }) %>
-      </div>
       <% } else { %>
-      <p class="text-center">Tidak ada gambar yang diupload.</p>
+        <p class="text-center">Tidak ada gambar yang diupload.</p>
       <% } %>
     </div>
+    
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
