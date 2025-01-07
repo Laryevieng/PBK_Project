@@ -57,6 +57,7 @@
             </p>
             <div class="row g-4">
                 <!-- Program Cards -->
+                
                 <div class="col-md-3 col-sm-6">
                     <div class="program-card card shadow-sm">
                         <div class="card-body p-4">
@@ -124,6 +125,22 @@
 
             <!-- Anggota Divisi Internal -->
             <div class="row g-4">
+                <% anggota.forEach(anggota => { %>
+                    <div class="col-md-3 col-sm-6">
+                      <div class="team-member text-center">
+                        <!-- Gambar -->
+                        <img
+                          src="data:image/jpeg;base64,<%= anggota.gambar.toString('base64') %>"
+                          alt="<%= anggota.nama %>"
+                          class="team-image"
+                        />
+                        <!-- Nama -->
+                        <h5 class="mb-1"><%= anggota.nama %></h5>
+                        <!-- Jabatan -->
+                        <p class="text-muted"><%= anggota.jabatan %></p>
+                      </div>
+                    </div>
+                    <% }); %>
                 <div class="col-md-3 col-sm-6">
                     <div class="team-member text-center">
                         <img src="/image/Internal02.JPG" alt="Anggota 1" class="team-image">

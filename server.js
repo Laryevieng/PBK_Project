@@ -35,25 +35,78 @@ app.get("/", (req, res) => {
   res.render("index", { title: "homepage" }); // Render the 'informasi.ejs' template
 });
 app.get("/informasi", (req, res) => {
-  res.render("informasi", { title: "Informasi" }); // Render the 'informasi.ejs' template
+  const sql =
+    "SELECT event_id, event_type, title, description, event_date FROM events";
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send("Gagal mengambil data acara.");
+    }
+    res.render("informasi", { events: results });
+  });
 });
 app.get("/profile", (req, res) => {
   res.render("profile", { title: "profile" }); // Render the 'informasi.ejs' template
 });
+// Rute untuk mendapatkan data dari tabel BPH
+// Route untuk BPH
 app.get("/bph", (req, res) => {
-  res.render("bph", { title: "bph" }); // Render the 'informasi.ejs' template
+  const sql = "SELECT gambar, nama, jabatan FROM bph";
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send("Gagal mengambil data BPH.");
+    }
+    res.render("bph", { anggota: results }); // Mengirim data ke halaman EJS
+  });
 });
+
+// Route untuk Internal
 app.get("/internal", (req, res) => {
-  res.render("internal", { title: "internal" }); // Render the 'informasi.ejs' template
+  const sql = "SELECT gambar, nama, jabatan FROM internal";
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send("Gagal mengambil data Internal.");
+    }
+    res.render("internal", { anggota: results }); // Mengirim data ke halaman EJS
+  });
 });
+
+// Route untuk Akademis
 app.get("/akademis", (req, res) => {
-  res.render("akademis", { title: "akademis" }); // Render the 'informasi.ejs' template
+  const sql = "SELECT gambar, nama, jabatan FROM akademis";
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send("Gagal mengambil data Akademis.");
+    }
+    res.render("akademis", { anggota: results }); // Mengirim data ke halaman EJS
+  });
 });
+
+// Route untuk Eksternal
 app.get("/eksternal", (req, res) => {
-  res.render("eksternal", { title: "eksternal" }); // Render the 'informasi.ejs' template
+  const sql = "SELECT gambar, nama, jabatan FROM eksternal";
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send("Gagal mengambil data Eksternal.");
+    }
+    res.render("eksternal", { anggota: results }); // Mengirim data ke halaman EJS
+  });
 });
+
+// Route untuk Medinfo
 app.get("/medinfo", (req, res) => {
-  res.render("medinfo", { title: "medinfo" }); // Render the 'informasi.ejs' template
+  const sql = "SELECT gambar, nama, jabatan FROM medinvo";
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send("Gagal mengambil data Medinfo.");
+    }
+    res.render("medinfo", { anggota: results }); // Mengirim data ke halaman EJS
+  });
 });
 
 app.get("/demis", (req, res) => {
@@ -77,6 +130,46 @@ app.get("/admin", (req, res) => {
     res.render("admin", { gambar: results });
   });
 });
+app.get("/admin-pengurus", (req, res) => {
+  const sql = `
+    SELECT 'bph' AS divisi, id, nama, jabatan, gambar FROM bph
+    UNION ALL
+    SELECT 'akademis' AS divisi, id, nama, jabatan, gambar FROM akademis
+    UNION ALL
+    SELECT 'eksternal' AS divisi, id, nama, jabatan, gambar FROM eksternal
+    UNION ALL
+    SELECT 'internal' AS divisi, id, nama, jabatan, gambar FROM internal
+    UNION ALL
+    SELECT 'medinvo' AS divisi, id, nama, jabatan, gambar FROM medinvo
+  `;
+
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send("Gagal mengambil data pengurus.");
+    }
+    res.render("admin-pengurus", { pengurus: results }); // Mengirim data ke template EJS
+  });
+});
+
+app.post("/upload_struktural", upload.single("gambar"), (req, res) => {
+  const { nama, divisi, jabatan } = req.body;
+
+  if (!req.file) {
+    return res.status(400).send("File gambar tidak diunggah.");
+  }
+
+  const gambar = req.file.buffer;
+
+  const sql = `INSERT INTO ${divisi} (nama, jabatan, gambar) VALUES (?, ?, ?)`;
+  db.query(sql, [nama, jabatan, gambar], (err, result) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send("Gagal menambahkan data.");
+    }
+    res.redirect("/admin-pengurus");
+  });
+});
 
 // Endpoint upload gambar
 app.post("/upload", upload.single("gambar"), (req, res) => {
@@ -89,7 +182,7 @@ app.post("/upload", upload.single("gambar"), (req, res) => {
       console.error(err);
       return res.status(500).send("Gagal menyimpan gambar.");
     }
-    res.redirect("/"); // Redirect ke halaman utama
+    res.redirect("/admin"); // Redirect ke halaman utama
   });
 });
 

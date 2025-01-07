@@ -25,7 +25,7 @@
       <nav class="navbar">
         <div class="nav-links">
           <a href="/">Beranda</a>
-          <a href="/informasi"class="active">Informasi</a>
+          <a href="/informasi" class="active">Informasi</a>
           <a href="/profile">Profil</a>
 
           <div class="dropdown">
@@ -82,45 +82,21 @@
               </div>
             </div>
           </div>
+
+          <% events.forEach(event => { %>
           <div class="col-md-4">
             <div class="card h-100 shadow-sm">
               <div class="card-body">
-                <span class="badge bg-info mb-2">Seminar</span>
-                <h5 class="card-title">Seminar Artificial Intelligence</h5>
+                <span class="badge bg-info mb-2"><%= event.event_type %></span>
+                <h5 class="card-title"><%= event.title %></h5>
+                <p class="card-text"><%= event.description %></p>
                 <p class="card-text">
-                  Seminar tentang perkembangan AI dan implementasinya dalam
-                  industri
-                </p>
-                <p class="card-text">
-                  <small class="text-muted">📅 20 April 2025</small>
+                  <small class="text-muted">📅 <%= event.event_date %></small>
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <span class="badge bg-success mb-2">Kompetisi</span>
-                <h5 class="card-title">Kompetisi Programming</h5>
-                <p class="card-text">Kompetisi coding tingkat universitas</p>
-                <p class="card-text">
-                  <small class="text-muted">📅 1 Mei 2025</small>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <span class="badge bg-purple mb-2">Seminar Blockchain</span>
-                <h5 class="card-title">Mengenal Lebih Dalam Blockchain</h5>
-                <p class="card-text">Belajar apa itu hash function, smartcontrac, public key, juga private key.</p>
-                <p class="card-text">
-                  <small class="text-muted">📅 11 Mei 2025</small>
-                </p>
-              </div>
-            </div>
-          </div>
+          <% }) %>
         </div>
       </section>
 
